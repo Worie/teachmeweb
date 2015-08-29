@@ -1,0 +1,12 @@
+<form class="search" style="margin-top:7px"  action="#/search/">
+      <input class="form-control" type="search" id="search" ng-model="filterSearch" placeholder="Przeszukaj stronę" autocomplete="off">
+      <ul class="search-ac fixed" >
+        <li ng-repeat="result in list | filter:filterSearch | filter:{search:'true' } | limitTo:5"><a onmousedown="scrollToContent();this.click();" o href="{{result.href}}">
+            {{result.title}}
+            <span class="hidden-xs"  ng-repeat="icon in result.tags">
+                <img class="icon" ng-src="{{icon | tags}}"/>
+            </span><br/>
+            <span>{{result.desc | limitTo:100}}...</span></a></li>
+        
+      </ul>
+</form>

@@ -1,0 +1,14 @@
+<div class="glyphicon glyphicon-chevron-left" onclick="historyBack()">Wróć</div>
+<!--<ng-include ng-bind-html="test" src="article.url"></ng-include>
+-->
+
+<h4>{{article.title}}</h4>
+Dasdasdas
+<div ng-bind-html="test" ></div>
+<nav class="row container-fluid"  style="max-width:100%;" ng-show="article.category=='lessons'">
+    <a href="{{getPreviousLesson().href}}" class='buttontext  float-left glyphicon 
+ btn btn-success col-xs-5' ng-show="{{getPreviousLesson()}}"><span class="glyphicon glyphicon-menu-left"></span>{{getPreviousLesson().title;}}</a>
+    
+    <a href="{{getNextLesson().href}}" class="buttontext float-right btn btn-success col-xs-5 " ng-show="{{getNextLesson()}}">{{getNextLesson().title;}} <span class="glyphicon glyphicon-menu-right"></span></a>
+</nav>
+

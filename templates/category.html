@@ -1,0 +1,46 @@
+
+<div ng-show="category=='!null'" ng-include="templates/main.html"></div>
+<div ng-repeat="article in articles = (articles| filter:{category:category} | filter: {search:'true'} | filter: filter| orderBy: orderBy) | limitTo : limits.main" class="listed-article">
+    
+    <div class="row">
+        
+        <div class="container-fluid margin-top">
+            
+            <div class="media">
+               <a href="{{article.href}}">
+
+                    <div class="media-left media-middle col-xs-12 col-md-3 text-center">
+                        <img class="media-object img img-responsive no-margin inline" alt="article.alt" ng-src="{{article.img}}" alt="..."><br/>
+                        <img src="{{icon | tags}}" ng-repeat="icon in article.tags" class="inline icon-md" />
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            {{article.title}}
+                            
+                        </h4>
+                        {{article.desc}}
+                        {{article.date | date : "h:mm dd MMMM yyyy"}}
+                    </div>
+
+                    
+             
+                    <div class="text-right">
+                        <a href="{{article.href}}" class="href">{{(article.category=='lessons' ? "Zaczynajmy!":"Przejdź do wpisu") }}
+                        <a href="#/modify" class="href" ng-show="logged">Edytuj</a>
+                        
+                      </a>
+                    </div>
+                 
+                
+                   
+                </a>   
+            </div>
+        </div>
+        
+        
+    </div>
+    <div ng-show="!articles.length"> No results</div>
+    
+</div>
+
+<button ng-show="limits.main<articles.length" ng-click="limits.main=limits.main+3" class="btn btn-success full-width text-center">Pokaż więcej wpisów</button>

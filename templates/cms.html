@@ -1,0 +1,51 @@
+<div class="" ng-bind-html="article.html" ng-show="logged.getValue()!==false"></div>
+
+<div class="text-center">
+
+<form class="inline" ng-submit="login()" ng-hide="logged.getValue()!==false" >
+    <input type="text" ng-model="data.user" class="form-control"  placeholder="Użytkownik"/>
+    <input type="password" ng-model="data.pass" class="form-control" placeholder="Hasło" />
+    <button type="submit" class="btn btn-success">Zaloguj się</button>
+</form>
+    
+    
+<form ng-show="logged.getValue()!==false" ng-submit="post();" enctype="multipart/form-data">
+    <input type="text" ng-model="article.title" class="form-control" value="{{article.title}}" placeholder="Tytuł"/>
+    <input type="text" ng-model="article.desc" class="form-control" value="{{article.desc}}" placeholder="Opis (krótko)"/>
+    <h4>Wybierz kategorię</h4>
+    <select class="form-control" ng-model="article.category" >
+        <option value="blog">Wpis na bloga</option>
+        <option value="lessons">Lekcje</option>
+        <option value="games">Gry</option>
+        <option value="tools">Narzędzia</option>
+    </select>
+    <textarea class='form-control full-width' style='height:300px' ng-model="article.html" value="{{article.html}}" placeholder="Treść"></textarea>
+    <input type="text" ng-model="article.tags" class="form-control" value="{{article.tags}}" placeholder="Tagi (oddzielone przecinkiem)"/>
+    <label><input type="checkbox" ng-model="article.search" ng-checked="{{article.search}}"/> Można wyszukać</label>
+    <label><input type="checkbox" ng-model="article.slides" ng-checked="{{article.slides}}"/> Prezentowane w slajdach</label>
+    <label><input type="checkbox" ng-model="article.rate" ng-checked="{{article.rate}}"/> Można oceniać</label>
+
+
+    <h4>Plik graficzny</h4>
+
+    <div>
+        <div ngf-drop ng-model="files" class="drop-box" 
+            ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
+            ngf-accept="'image/*'">Przeciągaj obrazki! (kilka na raz)</div>
+        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+        <!-- add ng-repeat-->
+        
+        <img ng-repeat="file in files" ngf-src="file" alt="{{file.name}}" ngf-default-src="'/thumb.jpg'" class="dragThumb" ngf-accept="'image/*'" ng-click="setArticleImg(file);">
+        
+    </div>
+        
+    
+    <br/>
+    <button type="submit" class="btn btn-success">Wyślij formularz</button>
+    
+    
+</form>
+    
+
+</div>

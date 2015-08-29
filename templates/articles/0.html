@@ -1,0 +1,46 @@
+<h1>{{article.title}}</h1>
+<img ng-src="{{article.img}}" class="img img-responsive inline"/><br/>
+<p>Artykuł ten jest wprowadzeniem do cyklu lekcji, gdzie wyjaśnione zostaną podstawy web-developmentu, wliczając w to role poszczególnych technologii używanych do stworzenia stron WWW. Zagadnienia przedstawione w tym wpisie są czysto teoretyczne, jednak niezbędne do dalszego rozwoju jako programisty stron internetowych.</p>
+
+<h4>Komunikacja klient-serwer</h4>
+<p>
+    Celem tej lekcji jest nauczenie się rozpoznawania stref działania web-develepmentu. 
+    Mowa tutaj oczywiście o front-endzie i back-endzie. Ale aby lepiej zrozumieć role tych dwóch działów , musimy zrozumieć sposób działania    witryn WWW. 
+    <br/>
+
+    Działają one na architekturze klient-serwer, co oznacza , że gdzieś w sieci istnieje komputer pełniący rolę serwera. Serwer , to komputer który daje dostęp do konkretnej usługi, tak aby klienci (czyli inne komputery w sieci, taki jak Twój) mogli prosić o udostępnienie konkretnego zasobu, informacji. Mówiąc prościej, przeglądarka WWW jest narzędziem, dzięki któremu odpytujemy konkretny serwer o pewne dane. Wpisując adres strony WWW w pasku przeglądarki, tak naprawdę prosimy komputer o tym adresie o udostępnienie strony internetowej. Jeśli podamy odpowiedni adres, serwer odpowie na nasze żądanie i zwróci pewne porcje danych, które następnie zostaną zinterpretowane przez przeglądarkę internetową i wyświetlone. Jeśli adres będzie niepoprawny, bądź dany serwer nie dostarcza usług http, przeglądarka poinformuje nas o błędzie ( np. "Strona internetowa jest niedostępna", "Nie można wyświetlić strony", "Nie odnaleziono serwera").
+
+Dlatego wyróżnia się podział na front-end i back-end.
+    <br/><br/>
+    Front-End to coś, co jest widoczne dla użytkownika - grafiki, tabelki, nagłówki, kolorki. Wszystko to zostaje wygenerowane przez naszą przeglądarkę internetową (czyli stronę klienta) na podstawie danych otrzymanych z serwera (backendu).
+</p>
+
+<h4>Więcej o Frontendzie</h4>
+<p>Technologie zaliczane do strony klienckiej to np. HTML, CSS i JavaScript. 
+<ul>
+    <li><b>HTML</b>, to język znaczników. To właśnie on jest interpretowany przez przeglądarkę i generuje szkielet naszej witryny.</li>
+    <li><b>CSS</b> nadaje tym wygenerowanym elementom wygląd - odpowiedni kolor, wymiary, obramowania, pozycje. Możesz łatwo sprawdzić różnicę między zwykłym HTMLem a tym wystylizowanym, wyłączając obsługę CSS na tej stronie. Zapewniam, że nie będzie przyjemnie poruszać się po takiej witrynie. </li>
+    <li><b>JavaScript</b> jest to logika po stronie klienta - język programowania, dzięki któremu możemy rozwiązywać operacje matematyczne, czy sprawdzać warunki, np. czy użytkownik zaakceptował regulamin poprzez odznaczenie checkboxa w formularzu rejestracyjnym. </li>
+
+</ul>
+
+
+
+Niestety wszystkie te 3 technologie są zależne od przegląarki klienta - każda z nich ma swoje własne implementacje standardów, co często powoduje, że musimy tworzyć jedną funkcjonalność (np przyciski wycentrowane w pionie) na kilka różnych sposobów. Zmusza to też web-developerów do testowania swojej pracy na kilku przeglądarkach.
+
+Warto nadmienić, że z racji, iż są to technologie front-endowe, każdy z klientów ma do nich pełen dostęp (tzn, że może podejrzeć kod źródłowy witryny i dowiedzieć się, jak ona działa). Dzieje się tak ponieważ przeglądarka internetowa musi otrzymać kod w orginalnej, niezmienionej/nieskompilowanej wersji tak aby wyświetlić witrynę. Przez to tworząc front aplikacji, jesteśmy w pewnym sensie działać na zasadach open-source. Oczywiście istnieją prawa autorskie i licencje, dzięki którym możemy chronić swoją pracę, co nie zmienia faktu , że możemy poznać kod źródłowy strony bez żadnych konsekwencji. Oczywiście jeśli chodzi o front-end.</p>
+
+<h4>Więcej o Backendzie</h4>
+<p>Z back-endem sprawa ma się troszkę inaczej. Kod napisany w np PHP jest bezpieczny, ponieważ nie jest on wysyłany do klienta. Samo PHP wykorzystywane jest np. do  dynamicznego generowania HTML po stronie serwera i przekazywanie go dalej do klienta, komunikacji z bazami danych, czy dostępu do innych funkcji serwera. W pewnym sensie działamy tam na warstwie abstrakcji, gdyż nie widzimy żadnych okienek, przycisków, czy formularzy (chyba, że odbierzemy je po stronie klienta, w przeglądarce). Jednak backend to głównie operacje na danych, cięcie zmiennych tekstowych, pobieranie i zapisywanie danych do bazy (tak naprawdę wykonywanie zapytań w specyficznym języku), czy weryfikacja danych otrzymanych od klienta.</p>
+
+<p>Osoba która zajmuje się zarówna front-endem jak i back-endem nazywana jest (a w zasadzie była) webmasterem. Obecnie rzadko znajduje się programistów którzy pracują w obu tych dziedzinach, chyba , że są to tak zwani freelancerzy albo developerzy w mniejszych firmach.
+</p>
+
+Polecam obejrzeć prezentację która została użyta podczas przeprowadzania tej lekcji na żywo.
+Link do pokazu slajdów dotyczącego tej lekcji znajdziesz <a href="https://www.icloud.com/keynote/AwBWCAESEMHDY8fbWMKFmth6tlGvjh8aKq4Rgct7XDXWuyATA7ebLcpmaAWu_lf5PLTCKPbfoFU2jEyUHiuyfQ0yKwMCUCAQEEIO_LBFA7p7a1pmCL9leUG3aI7LCFyCjJmTtz-2c9VYeT#Lekcja_1_Web-dev">tutaj</a>.
+<br/>
+Poniżej znajduje się nagranie z przeprowadzonej lekcji o tej tematyce:<br/>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Q_0TOx20edSc" frameborder="0" allowfullscreen></iframe>
+<h3>Pamiętajcie aby ocenić ten wpis!</h3>
+
+Zapraszam do zapoznania się z kolejnymi lekcjami.

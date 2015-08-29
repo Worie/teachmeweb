@@ -1,0 +1,11 @@
+<div class="row text-center stars" ng-show="articleBrowsing">
+            
+                <p class="col-xs-5 container-fluid ">Oceń wpis: </p>
+
+            <div class="col-xs-7" ng-controller="RatingCtrl" >
+
+      <div star-rating ng-model="rating1" max="5" on-rating-selected="rateFunction(rating)"></div>
+
+    </div>
+                
+</div>
